@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 #include <cmath>
-
+#include <unordered_set>
 using namespace std;
 
 void error(string word1, string word2, string msg);
