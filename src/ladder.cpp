@@ -73,9 +73,9 @@ void verify_word_ladder() {
     load_words(word_list, "src/words.txt");
     string start_word, end_word;
     cout << "Enter start word: ";
-    cin >> start_word;
+    //cin >> start_word;
     cout << "Enter end word: ";
-    cin >> end_word;
+    //cin >> end_word;
     if (start_word == end_word) {
         error(start_word, end_word, "Start and end words must be different");
         return;
