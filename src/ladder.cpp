@@ -1,5 +1,5 @@
 #include "ladder.h"
-
+#include <unordered_set>
 void error(string word1, string word2, string msg) {
     cerr << "Error: " << msg << " (" << word1 << " -> " << word2 << ")" << endl;
 }
@@ -80,9 +80,9 @@ void verify_word_ladder() {
     set<string> word_list;
     load_words(word_list, "src/words.txt");
     string start_word, end_word;
-    cout << "Enter start word: ";
+    //cout << "Enter start word: ";
     //cin >> start_word;
-    cout << "Enter end word: ";
+    //cout << "Enter end word: ";
     //cin >> end_word;
     if (start_word == end_word) {
         error(start_word, end_word, "Start and end words must be different");

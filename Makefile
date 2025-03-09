@@ -1,12 +1,12 @@
 CXXFLAGS=-ggdb -std=c++20 -Wall -Wextra -Werror -Wfatal-errors -pedantic
 
-problem: dijkstras.o src/dijkstras_main.cpp
-	g++ $(CXXFLAGS) dijkstras.o src/dijkstras_main.cpp -o problem
+problem: ladder.o src/ladder_main.cpp
+	g++ $(CXXFLAGS) ladder.o src/ladder_main.cpp -o problem
 
-main: src/dijkstras_main.cpp
-	g++ $(CXXFLAGS) src/dijkstras_main.cpp -o main
+main: src/ladder_main.cpp
+	g++ $(CXXFLAGS) src/ladder_main.cpp -o main
 
-dijkstras.o: src/dijkstras.cpp src/dijkstras.h
-	g++ $(CXXFLAGS) -c src/dijkstras.cpp -o dijkstras.o
+ladder.o: src/ladder.cpp src/ladder.h
+	g++ $(CXXFLAGS) -c src/ladder.cpp -o ladder.o
 
 clean:
