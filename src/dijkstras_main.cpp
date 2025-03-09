@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    Graph G;
+   /* Graph G;
     file_to_graph("src/small.txt", G);
     
     vector<int> previous(G.numVertices, -1);
@@ -11,6 +11,6 @@ int main() {
     for (int i = 0; i < G.numVertices; ++i) {
         vector<int> path = extract_shortest_path(distances, previous, i);
         print_path(path, distances[i]);
-    }
+    }*/
     return 0;
 }

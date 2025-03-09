@@ -1,4 +1,3 @@
-
 #include "dijkstras.h"
 
 struct Node {
@@ -58,5 +57,4 @@ void print_path(const vector<int>& v, int total){
     }
     cout << "\nTotal cost is " << total << "\n";
 }
-
 
