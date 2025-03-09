@@ -21,7 +21,21 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
 }
 
 bool is_adjacent(const string& word1, const string& word2) {
-    return edit_distance_within(word1, word2, 1);
+    int len1 = word1.length(), len2 = word2.length();
+    if (abs(len1 - len2) > 1) return false;
+    
+    int i = 0, j = 0, diff = 0;
+    while (i < len1 && j < len2) {
+        if (word1[i] != word2[j]) {
+            if (++diff > 1) return false;
+            if (len1 > len2) ++i; 
+            else if (len1 < len2) ++j; 
+            else { ++i; ++j; }
+        } else {
+            ++i; ++j;
+        }
+    }
+    return true;
 }
 
 vector<string> generate_word_ladder(const string& begin_word, const string& end_word, const set<string>& word_list) {
@@ -80,10 +94,10 @@ void verify_word_ladder() {
     set<string> word_list;
     load_words(word_list, "src/words.txt");
     string start_word, end_word;
-    //cout << "Enter start word: ";
-    //cin >> start_word;
-    //cout << "Enter end word: ";
-    //cin >> end_word;
+    cout << "Enter start word: ";
+    cin >> start_word;
+    cout << "Enter end word: ";
+    cin >> end_word;
     if (start_word == end_word) {
         error(start_word, end_word, "Start and end words must be different");
         return;
